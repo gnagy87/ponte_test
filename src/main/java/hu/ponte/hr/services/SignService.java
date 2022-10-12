@@ -27,7 +27,7 @@ public class SignService {
 			byte[] signed = privateSignature.sign();
 			return Base64.getEncoder().encodeToString(signed);
 		} catch (Exception e) {
-			log.error("Error happened during sign process: {}", e.getMessage());
+			log.error("Error happened during digital sign process: {}", e.getMessage());
 			return null;
 		}
 	}
