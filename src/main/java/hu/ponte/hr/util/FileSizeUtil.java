@@ -9,7 +9,7 @@ public class FileSizeUtil {
 
 	private final long maxAllowedSize = 2097152;
 
-	public boolean isPictureAcceptable(long size) {
+	public boolean isPictureSizeAcceptable(long size) {
 		if (size > maxAllowedSize) {
 			log.warn("Max picture size limit is 2MB. Current picture's size is: {}MB", String.format("%.2f", convertByteToMb(size)));
 			return false;

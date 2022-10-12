@@ -25,8 +25,8 @@ public class ImageStore {
 	private final ImageMetaEntityRepository imageMetaEntityRepository;
 	private final SignService signService;
 
-	public void uploadPicture(MultipartFile file) throws Exception {
-		if (Optional.ofNullable(file).map(f -> FileSizeUtil.isPictureAcceptable(f.getSize())).orElse(false)) {
+	public void uploadPicture(MultipartFile file) throws IOException {
+		if (Optional.ofNullable(file).map(f -> FileSizeUtil.isPictureSizeAcceptable(f.getSize())).orElse(false)) {
 			ImageMetaEntity imageMetaEntity = getImageMetaEntity(file);
 			imageMetaEntityRepository.save(imageMetaEntity);
 		}
